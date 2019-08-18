@@ -95,31 +95,35 @@ let spoonFn = {
     }
 }
 
+window.onbeforeunload = function (e) {
+    return "編集内容が破棄されます。続行しますか？";
+}
+
 window.onload = function () {
     //Set Codemirror
     codeMirrors.html = CodeMirror.fromTextArea($$("#codeHTML"), {
         mode: "htmlmixed",
-        extraKeys:{
-            "Ctrl-Space":"autocomplete"
+        extraKeys: {
+            "Ctrl-Space": "autocomplete"
         }
     });
     codeMirrors.js = CodeMirror.fromTextArea($$("#codeJS"), {
         mode: "javascript",
-        extraKeys:{
-            "Ctrl-Space":"autocomplete"
+        extraKeys: {
+            "Ctrl-Space": "autocomplete"
         }
     });
     codeMirrors.css = CodeMirror.fromTextArea($$("#codeCSS"), {
         mode: "css",
-        extraKeys:{
-            "Ctrl-Space":"autocomplete"
+        extraKeys: {
+            "Ctrl-Space": "autocomplete"
         }
     });
 
     //Enable Emmet
     emmetCodeMirror(codeMirrors.html);
     emmetCodeMirror(codeMirrors.css);
-    
+
 
     //set Options to All codeMirror textbox.
     spoonFn.editorSetOption("theme", "monokai");
