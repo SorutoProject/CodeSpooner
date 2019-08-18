@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>CodeSpooner</title>
+	<!--load StyleSheet-->
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="component/CodeSpooner/codeSpooner.main.css">
+	<link rel="stylesheet" href="component/codeMirror/lib/codemirror.css">
+	<link rel="stylesheet" href="component/codeMirror/addon/hint/show-hint.css">
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<!--editor styles-->
+	<!--
+	<link rel="stylesheet" href="component/codeMirror/theme/3024-day.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/3024-night.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/abcdef.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/ambiance.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/base16-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/bespin.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/base16-light.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/blackboard.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/cobalt.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/colorforth.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/dracula.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/duotone-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/duotone-light.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/eclipse.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/elegant.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/erlang-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/gruvbox-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/hopscotch.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/icecoder.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/isotope.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/lesser-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/liquibyte.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/lucario.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/material.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/mbo.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/mdn-like.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/midnight.css">-->
+	<link rel="stylesheet" href="component/codeMirror/theme/monokai.css">
+	<!--<link rel="stylesheet" href="component/codeMirror/theme/neat.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/neo.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/night.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/nord.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/oceanic-next.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/panda-syntax.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/paraiso-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/paraiso-light.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/pastel-on-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/railscasts.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/rubyblue.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/seti.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/shadowfox.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/solarized.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/the-matrix.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/tomorrow-night-bright.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/tomorrow-night-eighties.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/ttcn.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/twilight.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/vibrant-ink.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/xq-dark.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/xq-light.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/yeti.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/idea.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/darcula.css">-->
+	<!--
+	<link rel="stylesheet" href="component/codeMirror/theme/yonce.css">
+	<link rel="stylesheet" href="component/codeMirror/theme/zenburn.css">
+	-->
+	<!--load Script-->
+	<script src="component/codeMirror/lib/codemirror.js"></script>
+
+	<script src="component/codeMirror/addon/display/placeholder.js"></script>
+	<script src="component/codeMirror/addon/hint/show-hint.js"></script>
+	<script src="component/codeMirror/addon/hint/css-hint.js"></script>
+	<script src="component/codeMirror/addon/hint/javascript-hint.js"></script>
+	<script src="component/codeMirror/addon/hint/xml-hint.js"></script>
+	<script src="component/codeMirror/addon/hint/html-hint.js"></script>
+
+	<script src="component/codeMirror/addon/edit/closebrackets.js"></script>
+
+	<script src="component/codeMirror/mode/javascript/javascript.js"></script>
+	<script src="component/codeMirror/mode/css/css.js"></script>
+	<script src="component/codeMirror/mode/xml/xml.js"></script>
+	<script src="component/codeMirror/mode/htmlmixed/htmlmixed.js"></script>
+	
+	<script src="component/emmet/emmet.langJA.js"></script>
+	<script src="component/lz-string/lz-string.min.js"></script>
+
+	<script src="component/CodeSpooner/codeSpooner.main.js"></script>
+</head>
+
+<body>
+	<div id="header">
+		<input type="text" id="projectTitle" placeholder="プロジェクト名"/><br>by <input type="text" id="projectAuthor" placeholder="名無し"/>
+		<span id="toolbox">
+		    <button id="shareButton" title="このプロジェクトを共有する"><i class="fas fa-share-alt"></i></button>
+		</span>
+	</div>
+	<div id="content">
+		<div id="code">
+			<div id="codeHTMLDiv" class="first">
+				<textarea id="codeHTML" placeholder="Write HTML Here..."></textarea>
+			</div>
+			<div id="codeJSDiv" class="second">
+				<textarea id="codeJS" placeholder="Write JavaScript Here..."></textarea>
+			</div>
+			<div id="codeCSSDiv" class="third">
+				<textarea id="codeCSS" placeholder="Write CSS Here..."></textarea>
+			</div>
+		</div>
+		<div id="previewDiv" class="normal">
+			<iframe id="preview"></iframe>
+		</div>
+	</div>
+</body>
+
+</html>
