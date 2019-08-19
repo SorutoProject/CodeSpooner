@@ -146,9 +146,15 @@ window.onload = function () {
     });
 
     //addEventListener
+    
+    //if codeSpooner is load in iframe
+    if(window.parent == window){
     $$("#shareButton").addEventListener("click", function () {
         spoonFn.shareProject();
     });
+    }else{
+        $$("#shareButton").style.display = "none";
+    }
 
     $$("#projectTitle").addEventListener("keyup", function (e) {
         if (e.target.value !== "") document.title = e.target.value + " - CodeSpooner";
